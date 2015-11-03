@@ -25,7 +25,6 @@ for ( var i = 0 ; i < toCustom.length ; i++ ){
 			toCustom[i].parentNode.appendChild(newPlaceholder);
 		    break;
 		  case "left":
-	  		console.debug("left");
 			newPlaceholder.className = 'txtPlaceholder';	
 			toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
 		    break;
