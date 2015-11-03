@@ -4,7 +4,6 @@ for ( var i = 0 ; i < toCustom.length ; i++ ){
 
 	var newPlaceholder = document.createElement('p');
 
-
 	if(toCustom[i].getAttribute("data-placeholder") != undefined){
 		newPlaceholder.innerHTML = toCustom[i].getAttribute("data-placeholder");
 	}else{
@@ -49,7 +48,6 @@ for ( var i = 0 ; i < toCustom.length ; i++ ){
 
 
 function CustomPlaceholderChange(){
-
 	if(this.value != ""){
 		this.parentNode.querySelector(".txtPlaceholder").style.display = "block";
 		if(this.getAttribute("data-position") == "right" || this.getAttribute("data-position") == "left" ){
@@ -63,12 +61,8 @@ function CustomPlaceholderChange(){
 		this.parentNode.querySelector(".txtPlaceholder").classList.add("txtPlaceholder_anim_disappear");
 		this.parentNode.querySelector(".txtPlaceholder").addEventListener("animationend", CustomPlaceholderEnd);
 	}
-
 }
-
 
 function CustomPlaceholderEnd(e){
 	this.style.display = "none";
 }
-
-
