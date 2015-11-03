@@ -1,49 +1,54 @@
-var toCustom = document.querySelectorAll('.slidePlaceHolder input'+', .slidePlaceHolder textarea'+', .slidePlaceHolder select');
 
-for ( var i = 0 ; i < toCustom.length ; i++ ){
+function slidePlaceholder(){
 
-	var newPlaceholder = document.createElement('p');
+	var toCustom = document.querySelectorAll('.slidePlaceHolder input'+', .slidePlaceHolder textarea'+', .slidePlaceHolder select');
 
-	if(toCustom[i].getAttribute("data-placeholder") != undefined){
-		newPlaceholder.innerHTML = toCustom[i].getAttribute("data-placeholder");
-	}else{
-		newPlaceholder.innerHTML = toCustom[i].placeholder;
-	}
+	for ( var i = 0 ; i < toCustom.length ; i++ ){
 
-	if(toCustom[i].getAttribute("data-color") != undefined){
-		newPlaceholder.style.color = toCustom[i].getAttribute("data-color");
-		toCustom[i].style.borderBottomColor = toCustom[i].getAttribute("data-color");
-	}else{
-		newPlaceholder.style.color = "inherit";
-	}
+		var newPlaceholder = document.createElement('p');
 
-	if(toCustom[i].getAttribute("data-position") != undefined){
-		switch (toCustom[i].getAttribute("data-position")) {
-		  case "right":
-			newPlaceholder.className = 'txtPlaceholder';	
-			toCustom[i].parentNode.appendChild(newPlaceholder);
-		    break;
-		  case "left":
-			newPlaceholder.className = 'txtPlaceholder';	
-			toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
-		    break;
-		  case "bottom":
-			newPlaceholder.className = 'txtPlaceholder';	
-			toCustom[i].parentNode.appendChild(newPlaceholder);
-		    break;
-		  case "top":
-			newPlaceholder.className = 'txtPlaceholder';	
-			toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
-		    break;
+		if(toCustom[i].getAttribute("data-placeholder") != undefined){
+			newPlaceholder.innerHTML = toCustom[i].getAttribute("data-placeholder");
+		}else{
+			newPlaceholder.innerHTML = toCustom[i].placeholder;
 		}
-	}else{
-		newPlaceholder.className = 'txtPlaceholder';	
-		toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
+
+		if(toCustom[i].getAttribute("data-color") != undefined){
+			newPlaceholder.style.color = toCustom[i].getAttribute("data-color");
+			toCustom[i].style.borderBottomColor = toCustom[i].getAttribute("data-color");
+		}else{
+			newPlaceholder.style.color = "inherit";
+		}
+
+		if(toCustom[i].getAttribute("data-position") != undefined){
+			switch (toCustom[i].getAttribute("data-position")) {
+			  case "right":
+				newPlaceholder.className = 'txtPlaceholder';	
+				toCustom[i].parentNode.appendChild(newPlaceholder);
+			    break;
+			  case "left":
+				newPlaceholder.className = 'txtPlaceholder';	
+				toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
+			    break;
+			  case "bottom":
+				newPlaceholder.className = 'txtPlaceholder';	
+				toCustom[i].parentNode.appendChild(newPlaceholder);
+			    break;
+			  case "top":
+				newPlaceholder.className = 'txtPlaceholder';	
+				toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
+			    break;
+			}
+		}else{
+			newPlaceholder.className = 'txtPlaceholder';	
+			toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
+		}
+
+		toCustom[i].addEventListener("keypress", CustomPlaceholderChange);
+		toCustom[i].addEventListener("mousemove", CustomPlaceholderChange);
+		toCustom[i].addEventListener("onfocus", CustomPlaceholderChange);
 	}
 
-	toCustom[i].addEventListener("keypress", CustomPlaceholderChange);
-	toCustom[i].addEventListener("mousemove", CustomPlaceholderChange);
-	toCustom[i].addEventListener("onfocus", CustomPlaceholderChange);
 }
 
 
