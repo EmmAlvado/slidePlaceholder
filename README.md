@@ -5,7 +5,7 @@ slidePlaceholder is a short pluggin using css and vanilla js.
 it's useful for keeping your placeholder text visible.
 for use it create a div with "slidePlaceholder" class and put your input in.
 for customise your sliding placeholder use "data-color" on your input (rgb/rgba/hex color working). Default color is black.
-for choose the slide direction use "data-position" on your input (top/bottom/right/left). Default direction is top.
+for choose the slide direction use "data-position" on your input (top/bottom/right/left/inside). Default direction is top.
 
 Call slidePlaceholder() for instantiate customization ans sliding.
 
