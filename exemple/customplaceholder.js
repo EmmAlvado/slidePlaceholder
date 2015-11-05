@@ -38,6 +38,11 @@ function slidePlaceholder(){
 				newPlaceholder.className = 'txtPlaceholder';	
 				toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
 			    break;
+			  case "inside":
+				newPlaceholder.className = 'txtPlaceholder';	
+				newPlaceholder.style.position = 'absolute';	
+				toCustom[i].parentNode.insertBefore(newPlaceholder, toCustom[i]);
+			    break;
 			}
 		}else{
 			newPlaceholder.className = 'txtPlaceholder';	
